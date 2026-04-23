@@ -1,0 +1,22 @@
+# Polymarket Scanner 配置
+# Edwardsamaxl / 2026-04-23
+
+# 轮询设置
+polling_interval: 60       # 秒，建议不低于 30s（太快会被限流）
+min_volume_usd: 10000      # 最小成交量门槛，低于此值的合约忽略
+
+# 套利检测参数
+min_spread: 0.03          # 最小价差（Yes+No-1），低于此值不告警
+min_net_return: 0.01      # 最小费后净收益率（%）
+
+# 手续费（请根据实际平台调整）
+polymarket_fee: 0.01      # Polymarket 每笔约 1%
+betfair_fee: 0.05         # Betfair 约 5%（如果做跨平台）
+
+# 通知
+notify_on_opportunity: true
+notify_on_startup: true
+notify_on_error: true
+
+# 数据库
+db_path: data/opportunities.db
